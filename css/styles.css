@@ -154,8 +154,9 @@ img {
   text-align: center;
   padding: 188px 0;
   background-size: cover;
-  /* min-width: 1440px;
-  min-height: 600px; */
+  background-repeat: no-repeat;
+  max-width: 1440px;
+  height: 600px;
   margin-left: auto;
   margin-right: auto;
   background-image: linear-gradient(
@@ -230,12 +231,21 @@ img {
   margin-right: 24px;
 }
 
-.svg-char {
-  padding: 24px 100px;
+.charscteristics-icon {
+  margin-bottom: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 264px;
   height: 112px;
-  background: #f4f4fd;
+  background-color: #f4f4fd;
   border-radius: 4px;
+}
+
+.svg-char {
+  width: 64px;
+  height: 64px;
 }
 
 .list-title {
@@ -302,10 +312,6 @@ img {
 .card-content {
   padding: 32px 16px;
   text-align: center;
-}
-
-.team-text {
-  margin-top: 8px;
 }
 
 .team-soc-list {
@@ -387,23 +393,36 @@ img {
   justify-content: center;
 }
 
-.customers-item {
+.customers-link {
   display: flex;
-  border: 1px solid #8e8f99;
-  /* justify-content: center; */
-
+  border: 1px solid currentColor;
+  align-items: center;
+  justify-content: center;
   width: 168px;
   height: 88px;
-  padding: 16px 32px;
+  color: #8e8f99;
+}
+
+.customers-link:is(:hover, :focus) {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.customers-item {
 }
 
 .customers-svg {
-  fill: var(--color1, #8e8f99);
+  fill: currentColor;
+  width: 104px;
+  height: 56px;
 }
-.customers-svg:hover,
-.customers-svg:focus {
+/* .customers-link:is(:hover, :focus) {
+  border-color: var(--accent-color);
+}
+
+.customers-link:is(:hover, :focus) .customers-svg {
   fill: var(--accent-color);
-}
+} */
 
 /* Portfolio */
 
@@ -466,18 +485,22 @@ img {
 }
 
 .container-list > .cards-list {
-  flex-basis: calc(100 / 3-24px);
+  flex-basis: calc(100 / 3-48px);
   margin-left: 24px;
   margin-top: 48px;
+}
+
+.cards-list {
+  cursor: pointer;
+}
+
+.cards-list:is(:hover, :focus) {
   box-shadow: var(--card-shadow);
 }
 
-/* .container-list-div {
-  margin-bottom: 48px;
-} */
-
 .div-header-paragraf {
   padding: 32px 16px;
+  border: 1px solid #e7e9fc;
 }
 
 .team-text {
@@ -490,6 +513,14 @@ img {
   background-color: var(--title-text-color);
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+.footer-wrap {
+  display: flex;
+}
+
+.footer-first {
+  margin-right: 120px;
 }
 
 .footer-text {
